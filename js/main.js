@@ -15,6 +15,17 @@ function toast(msg, ic){
 document.addEventListener('DOMContentLoaded', ()=>{
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  const backdrop = document.getElementById('navBackdrop');
+
+  const closeMenu = () => {
+    if (toggle) toggle.classList.remove('open');
+    if (navLinks) navLinks.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+  };
+
   /* ---------- SCROLL SUAVE personalizado (easing) ---------- */
   let _scrolling = false;
   function smoothScrollTo(targetY, duration){
@@ -57,8 +68,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       e.preventDefault();
       scrollToTarget(target, 950);
       // cerrar menú móvil si está abierto
-      const tg=document.getElementById('navToggle'), nl=document.getElementById('navLinks');
-      if(tg && nl){ tg.classList.remove('open'); nl.classList.remove('open'); }
+      closeMenu();
       history.replaceState(null,'',id); // actualiza la URL sin saltar
     });
   });
@@ -112,10 +122,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
   counters.forEach(c=>cio.observe(c));
 
   /* ---------- Menú móvil ---------- */
-  const toggle=document.getElementById('navToggle'), navLinks=document.getElementById('navLinks');
-  const closeMenu=()=>{toggle.classList.remove('open');navLinks.classList.remove('open');};
-  toggle.addEventListener('click',()=>{toggle.classList.toggle('open');navLinks.classList.toggle('open');});
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.classList.toggle('open');
+      navLinks.classList.toggle('open', isOpen);
+      if (backdrop) backdrop.classList.toggle('open', isOpen);
+      document.body.classList.toggle('no-scroll', isOpen);
+    });
+  }
+  if (backdrop) {
+    backdrop.addEventListener('click', closeMenu);
+  }
+  if (navLinks) {
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
 
   /* ---------- Nav activo según sección ---------- */
   const sections=[...document.querySelectorAll('section[id], header[id], div[id]')].filter(s=>document.querySelector(`.nav-link[href="#${s.id}"]`));
