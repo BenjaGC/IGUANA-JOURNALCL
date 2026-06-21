@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Iguana Verde (Iguana iguana) — landing editorial interactivo: hábitat, comportamiento, anatomía y curiosidades.">
+<title>Iguana Journal — La Iguana Verde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="reading-bar" id="readingBar"></div>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#top" class="nav-brand">🦎 Iguana<span>Journal</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#intro" class="nav-link">Especie</a>
+      <a href="#anatomia" class="nav-link">Anatomía</a>
+      <a href="#traits" class="nav-link">Comportamiento</a>
+      <a href="#gal" class="nav-link">Galería</a>
+      <a href="#quiz" class="nav-link">Quiz</a>
+      <a href="#dyk" class="btn-leaf">Curiosidades <span>↡</span></a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img class="hero-img" id="heroImg" src="img/bg-header.jpg" alt="Iguana verde en su hábitat">
+  <div class="hero-veil"></div>
+  <div class="leaves" id="leaves" aria-hidden="true"></div>
+  <div class="hero-c">
+    <span class="eyebrow reveal in">🦎 Ficha de especie · Reptilia</span>
+    <h1 class="reveal in">La Iguana <em class="grad">Verde</em></h1>
+    <div class="latin reveal in">Iguana iguana</div>
+    <p class="hero-sub reveal in">Un gigante arborícola de sangre fría, maestro del camuflaje y nadador excepcional. Explora su mundo.</p>
+    <div class="hero-cta reveal in">
+      <a href="#intro" class="btn-leaf big">Comenzar a explorar <span>↓</span></a>
+      <button class="btn-outline big" id="factBtn">Dato al azar 🎲</button>
+    </div>
+  </div>
+  <div class="data-strip reveal">
+    <div class="ds"><span class="l">LONGITUD</span><span class="v" data-count="2" data-suffix=" m">0</span></div>
+    <div class="ds-div"></div>
+    <div class="ds"><span class="l">PESO MÁX</span><span class="v" data-count="15" data-suffix=" kg">0</span></div>
+    <div class="ds-div"></div>
+    <div class="ds"><span class="l">ESP. VIDA</span><span class="v" data-count="20" data-suffix=" años">0</span></div>
+  </div>
+  <a href="#intro" class="scroll-hint" aria-label="Bajar"><span class="iguana-tail">🦎</span><span class="chev">⌄</span></a>
+</header>
+
+<!-- INTRO -->
+<section class="intro wrap" id="intro">
+  <div class="intro-grid">
+    <div class="reveal">
+      <span class="eyebrow">Sobre la especie</span>
+      <p class="lead">La iguana verde, también conocida como iguana común, es un gran lagarto arborícola nativo de Centroamérica, Sudamérica y el Caribe. Pese a su nombre, presenta diversos colores: del verde brillante de los jóvenes a tonos grisáceos o anaranjados en los adultos dominantes.</p>
+      <p class="body">Son herbívoros estrictos: hojas, flores y frutas. Su diseño evolutivo incluye una excelente visión, una robusta cola que usan como látigo para defenderse, y un tercer ojo pineal en la parte superior de la cabeza para detectar cambios de luz y depredadores aéreos.</p>
+      <div class="tag-row">
+        <span class="tag">🌿 Herbívora</span><span class="tag">🌳 Arborícola</span>
+        <span class="tag">🏊 Nadadora</span><span class="tag">☀️ Ectoterma</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="imgwrap tilt"><img src="img/iguana-1.jpg" alt="Retrato de iguana verde"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMÍA INTERACTIVA -->
+<section class="anatomy" id="anatomia">
+  <div class="wrap">
+    <h2 class="reveal">Anatomía interactiva</h2>
+    <p class="section-sub reveal">Toca cada punto brillante para descubrir su función.</p>
+    <div class="anatomy-grid">
+      <div class="anatomy-stage reveal">
+        <img src="img/iguana-1.jpg" alt="Anatomía de la iguana">
+        <button class="hotspot" style="top:20%;left:40%" data-part="ojo" aria-label="Ojo"><span></span></button>
+        <button class="hotspot" style="top:12%;left:54%" data-part="pineal" aria-label="Ojo pineal"><span></span></button>
+        <button class="hotspot" style="top:42%;left:28%" data-part="papada" aria-label="Papada"><span></span></button>
+        <button class="hotspot" style="top:30%;left:66%" data-part="cresta" aria-label="Cresta"><span></span></button>
+        <button class="hotspot" style="top:72%;left:78%" data-part="cola" aria-label="Cola"><span></span></button>
+      </div>
+      <div class="anatomy-info reveal">
+        <div class="ai-card" id="aiCard">
+          <span class="ai-ic" id="aiIc">👆</span>
+          <h3 id="aiTitle">Explora la anatomía</h3>
+          <p id="aiText">Toca uno de los puntos brillantes sobre la iguana para conocer cada parte de su cuerpo y por qué es especial.</p>
+        </div>
+        <div class="ai-dots">
+          <button class="ai-dot" data-part="ojo">Ojo</button>
+          <button class="ai-dot" data-part="pineal">Ojo pineal</button>
+          <button class="ai-dot" data-part="papada">Papada</button>
+          <button class="ai-dot" data-part="cresta">Cresta dorsal</button>
+          <button class="ai-dot" data-part="cola">Cola</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAITS -->
+<div class="traits" id="traits">
+  <section class="wrap">
+    <h2 class="reveal">Características clave</h2>
+    <div class="traits-grid">
+      <div class="trait reveal" tabindex="0">
+        <span class="ic">👁️</span><h3>Visión aguda</h3>
+        <p>Excelente agudeza visual para detectar movimiento y formas a gran distancia, crucial para la navegación arbórea y evadir depredadores.</p>
+        <div class="trait-meter"><span style="--w:90%"></span></div>
+      </div>
+      <div class="trait reveal" tabindex="0">
+        <span class="ic">🧠</span><h3>Temperamento</h3>
+        <p>Generalmente dócil, pero puede exhibir comportamientos territoriales con posturas corporales y movimientos de cabeza (head-bobbing).</p>
+        <div class="trait-meter"><span style="--w:60%"></span></div>
+      </div>
+      <div class="trait reveal" tabindex="0">
+        <span class="ic">🌿</span><h3>Camuflaje</h3>
+        <p>Su coloración y la textura de su piel le permiten fundirse con el follaje tropical, una adaptación vital para sobrevivir.</p>
+        <div class="trait-meter"><span style="--w:85%"></span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- GALERÍA -->
+<section class="gal wrap" id="gal">
+  <h2 class="reveal">Hábitat natural</h2>
+  <p class="section-sub reveal">Haz clic en cualquier imagen para verla en grande.</p>
+  <div class="bento reveal">
+    <div class="b big" data-full="img/bg-header.jpg"><img src="img/bg-header.jpg" alt="Selva tropical"><div class="cap"><p>Las selvas densas dan refugio y alimento abundante.</p></div></div>
+    <div class="b" data-full="img/iguana-1.jpg"><img src="img/iguana-1.jpg" alt="Iguana sobre tronco"><div class="cap"><p>Dieta herbívora</p></div></div>
+    <div class="b" data-full="img/iguana-4.jpg"><img src="img/iguana-4.jpg" alt="Grupo de iguanas"><div class="cap"><p>Cerca del agua</p></div></div>
+    <div class="b wide" data-full="img/iguana-4.jpg"><img src="img/iguana-4.jpg" alt="Iguanas al atardecer"><div class="cap"><p>Buscando calor en las ramas altas al atardecer.</p></div></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-sec" id="quiz">
+  <div class="wrap">
+    <div class="quiz-card reveal">
+      <span class="eyebrow">Pon a prueba lo aprendido</span>
+      <h2>Mini Quiz 🦎</h2>
+      <div id="quizBody">
+        <p class="q-text" id="qText">Cargando pregunta…</p>
+        <div class="q-options" id="qOptions"></div>
+      </div>
+      <div class="quiz-foot">
+        <span class="q-score">Puntaje: <b id="qScore">0</b> / <span id="qTotal">0</span></span>
+        <button class="btn-outline" id="qNext" disabled>Siguiente →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DID YOU KNOW -->
+<div class="dyk" id="dyk">
+  <section class="wrap">
+    <div class="dyk-c reveal">
+      <div class="diamond"><span></span></div>
+      <h2>¿Sabías que...?</h2>
+      <div class="quote"><p id="dykText">Aunque son excelentes trepadoras, las iguanas verdes son nadadoras excepcionales. Si se sienten amenazadas en ramas sobre el agua, se lanzan desde grandes alturas para escapar buceando hacia la seguridad.</p></div>
+      <button class="btn-leaf" id="dykMore">Otro dato curioso 🔄</button>
+    </div>
+  </section>
+</div>
+
+<!-- CTA -->
+<section class="cta-sec" id="contacto">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <h2>¿Te enamoraste de las iguanas? 🦎💚</h2>
+      <p>Suscríbete para recibir fichas de especies, fotografía de naturaleza y datos curiosos cada semana.</p>
+      <form class="cta-form" id="ctaForm">
+        <input type="email" id="ctaEmail" placeholder="tu@correo.com" required>
+        <button type="submit" class="btn-leaf big">Suscribirme ↗</button>
+      </form>
+      <p class="cta-note" id="ctaNote"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">🦎 Iguana Journal</div>
+  <div class="flinks">
+    <a href="https://www.anipedia.net/iguanas/iguana-verde/" target="_blank" rel="noopener">Fuentes</a>
+    <a href="#top" data-scroll>Volver arriba</a>
+    <a href="#contacto" data-scroll>Contacto</a>
+  </div>
+  <p class="copy">© 2026 Nature Digital — High-End Digital Storytelling</p>
+  <p class="by">Diseñado por <em>Benjamín González</em></p>
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<div class="toast" id="toast"><span class="t-ic">✓</span> <span class="t-msg"></span></div>
+<button class="to-top" id="toTop" aria-label="Volver arriba">🦎</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+=================================================================
+ IMÁGENES DE IGUANA JOURNAL — pon estos archivos en esta carpeta (img/)
+=================================================================
+
+1) bg-header.jpg  → Foto grande de iguana para el encabezado (horizontal)
+2) iguana-1.jpg   → Retrato de iguana (vertical, primer plano)
+3) iguana-4.jpg   → Grupo de iguanas / iguana en su entorno
+
+Estas son las mismas imágenes que ya tenías en el proyecto
+original. Solo cópialas aquí con esos nombres exactos.
